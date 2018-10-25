@@ -1,4 +1,4 @@
-# CSCI4110U Base Project (Multi-Platform Version)
+# CSCI3090U Base Project (Multi-Platform Version)
 
 This is a base OpenGL Project with makefiles for UNIX (supporting Linux and the Windows Subsystem for Linux), MacOS, and Windows (via NMake or MGW).
 
@@ -13,7 +13,7 @@ Note:  There is also a Visual Studio 2017 Solution available.
 - ensure that you have GLEW and GLUT installed
 
 ```sh
-$ sudo apt install libglew-dev libglut-dev
+$ sudo apt install libglew-dev libglfw3
 ```
 
 - build the project:
