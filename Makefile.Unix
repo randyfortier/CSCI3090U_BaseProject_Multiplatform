@@ -5,7 +5,7 @@ main: main.o
 	g++ -o main $^ -L$(GL_LIB) -lm -lGL -lglfw -lGLEW
 
 .cpp.o:
-	g++ -std=gnu++0x -c -o $@ $< -I$(GL_INCLUDE)
+	g++ -std=gnu++0x -c -o $@ $< -I$(GL_INCLUDE) -Iinclude
 
 clean:
 	rm -f main *.o

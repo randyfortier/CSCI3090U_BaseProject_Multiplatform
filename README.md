@@ -13,7 +13,7 @@ Note:  There is also a Visual Studio 2017 Solution available.
 - ensure that you have GLEW and GLUT installed
 
 ```sh
-$ sudo apt install libglew-dev libglfw3
+$ sudo apt install libglew-dev libglfw3 libglfw3-dev
 ```
 
 - build the project:
@@ -84,7 +84,7 @@ Disclaimer:  The recommended platform is Windows.  Using any other platform may 
 
 e.g. on Ubuntu:
 ```sh
-$ sudo apt install libglew-dev libglfw3
+$ sudo apt install libglew-dev libglfw3 libglfw3-dev
 ```
 
 - build the project:
