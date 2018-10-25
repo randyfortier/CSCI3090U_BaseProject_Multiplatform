@@ -1,0 +1,9 @@
+main.exe: main.obj
+	link /nologo /out:main.exe /NODEFAULTLIB:LIBCMT /SUBSYSTEM:console main.obj opengl32.lib msvcrt.lib user32.lib shell32.lib gdi32.lib msvcmrt.lib lib\glfw3.lib lib\glew32.lib
+
+.cpp.obj:
+	cl /I include /EHsc /nologo /Fo$@ /c $<
+
+clean:
+	del main.exe
+   del *.obj

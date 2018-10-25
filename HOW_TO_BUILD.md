@@ -1,9 +1,3 @@
-# CSCI4110U Base Project (Multi-Platform Version)
-
-This is a base OpenGL Project with makefiles for UNIX (supporting Linux and the Windows Subsystem for Linux), MacOS, and Windows (via NMake or MGW).
-
-# How to Build
-
 ## Windows
 
 Note:  There is also a Visual Studio 2017 Solution available.
