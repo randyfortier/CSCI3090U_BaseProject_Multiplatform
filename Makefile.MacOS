@@ -1,4 +1,4 @@
-GLEW_INCLUDE = /opt/local/include
+GLEW_INCLUDE = /opt/local/include:include
 GLEW_LIB = /opt/local/lib
 
 main: main.o

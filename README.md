@@ -46,12 +46,20 @@ $ ./main
 
 Disclaimer:  The recommended platform is Windows.  Using any other platform may mean that technical support is not available.  I've taken a few hours to make it as seamless as possible on other platforms, but you are using it at your own risk.
 
-- ensure that you have GLEW installed (GLUT is installed by default)
+- ensure that you have GLEW installed
 
 e.g. using Homebrew:
 
 ```sh
 $ brew install glew
+```
+
+- ensure that you have GLFW installed
+
+e.g. using Homebrew:
+
+```sh
+$ brew install glfw3
 ```
 
 - build the project:
