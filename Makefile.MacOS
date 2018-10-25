@@ -1,8 +1,8 @@
-GLEW_INCLUDE = /opt/local/include:include
+GLEW_INCLUDE = include
 GLEW_LIB = /opt/local/lib
 
 main: main.o
-	g++ -o main $^ -framework OpenGL -L$(GLEW_LIB) -lGLEW -lglfw3
+	g++ -o main $^ -framework OpenGL -L$(GLEW_LIB) -lGLEW -lglfw
 
 .cpp.o:
 	g++ -Wno-deprecated-declarations -c -o $@ $< -I$(GLEW_INCLUDE)
