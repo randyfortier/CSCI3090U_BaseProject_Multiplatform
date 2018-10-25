@@ -30,7 +30,7 @@ $ ./main
 
 ### Using Visual Studio Command Prompt
 
-- GLEW and GLUT are included in the 'include' and 'lib' subfolders
+- GLEW and GLFW are included in the 'include' and 'lib' subfolders
 
 ```batch
 > nmake /F Nmakefile.Windows
@@ -76,7 +76,7 @@ Disclaimer:  The recommended platform is Windows.  Using any other platform may 
 
 e.g. on Ubuntu:
 ```sh
-$ sudo apt install libglew-dev libglut-dev
+$ sudo apt install libglew-dev libglfw3
 ```
 
 - build the project:
