@@ -13,6 +13,7 @@
 
 #include "shader.hpp"
 #include "trackball.hpp"
+#include "error.hpp"
 
 // window-related variables
 int width = 1024;
@@ -145,6 +146,7 @@ int main(int argc, char** argv) {
    // create a window and an OpenGL context
    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+   glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
    GLFWwindow* window = glfwCreateWindow(width, height, "CSCI 3090U Base OpenGL Project", NULL, NULL);
    if (!window) {
       // window or OpenGL context creation failed
@@ -159,8 +161,20 @@ int main(int argc, char** argv) {
       std::cerr << "OpenGL 2.0 not available" << std::endl;
       return 1;
    }
-   std::cout << "Using GLEW " << glewGetString(GLEW_VERSION) << std::endl;
-   std::cout << "Using OpenGL " << glGetString(GL_VERSION) << std::endl;
+   std::cout << "GLEW Version:   " << glewGetString(GLEW_VERSION) << std::endl;
+   std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
+   std::cout << "GLSL Version:   " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
+   std::cout << "GPU Vendor:     " << glGetString(GL_VENDOR) << std::endl;
+   std::cout << "GPU Model:      " << glGetString(GL_RENDERER) << std::endl;
+
+   // setup the error handling
+   GLint flags; glGetIntegerv(GL_CONTEXT_FLAGS, &flags);
+   if (flags & GL_CONTEXT_FLAG_DEBUG_BIT) {
+      glEnable(GL_DEBUG_OUTPUT);
+      glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+      glDebugMessageCallback(openGlDebugCallback, nullptr);
+      glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE);
+   }
 
    glfwSetMouseButtonCallback(window, mouse);
    glfwSetCursorPosCallback(window, drag);
